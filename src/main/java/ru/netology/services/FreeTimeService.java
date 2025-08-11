@@ -6,16 +6,16 @@ public class FreeTimeService {
         int money = 0; // начальный баланс
 
         for (int month = 0; month < 12; month++) {
-            if (money >= threshold) { // можем ли отдыхать?
-                months++; // увеличиваем счетчик месяцев отдыха
-                money -= expense * 4; // траты на отдых за месяц
+            if (money >= threshold) {
+                // Отдых
+                money -= expense; // траты на отдых , ежемесячные и
+                money /= 3; // остаток делится на 3
+                months++;
             } else {
-                money += income - expense; // работа или накопление
-            }
-            if (money < 0) {
-                money = 0; // баланс не может быть отрицательным
+                money += income;
+                money -= expense;
             }
         }
-        return months;
-    }
-}
+                return months;
+            }
+        }
