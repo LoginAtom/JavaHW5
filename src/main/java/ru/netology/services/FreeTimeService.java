@@ -16,6 +16,6 @@ public class FreeTimeService {
                 money -= expense;
             }
         }
-                return months;
-            }
-        }
+        return months;
+    }
+}
